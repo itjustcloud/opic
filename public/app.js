@@ -3,6 +3,7 @@ const state = {
   fillersData: { version: 1, fillers: [] },
   selectedId: null,
   dirty: false,
+  storageMode: "server",
   mode: "edit",
   studyIndex: 0,
   showEnglish: false,
@@ -13,6 +14,8 @@ const state = {
     rate: 1
   }
 };
+
+const localScriptsKey = "opic-script-studio:scripts";
 
 const elements = {
   addScriptButton: document.querySelector("#addScriptButton"),
@@ -280,7 +283,11 @@ function speakCurrentSentence(language) {
 
 function setDirty(isDirty = true) {
   state.dirty = isDirty;
-  elements.saveStatus.textContent = isDirty ? "저장 필요" : "저장됨";
+  elements.saveStatus.textContent = isDirty
+    ? "저장 필요"
+    : state.storageMode === "local"
+      ? "브라우저 저장됨"
+      : "저장됨";
   elements.saveStatus.classList.toggle("dirty", isDirty);
   elements.saveStatus.classList.remove("error");
 }
@@ -880,6 +887,25 @@ function validateBeforeSave() {
   return "";
 }
 
+function readLocalScriptsData() {
+  try {
+    const raw = window.localStorage.getItem(localScriptsKey);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeLocalScriptsData(data) {
+  window.localStorage.setItem(localScriptsKey, JSON.stringify(data));
+}
+
+async function fetchJson(path) {
+  const response = await fetch(path, { cache: "no-store" });
+  if (!response.ok) throw new Error(`${path} 요청 실패`);
+  return response.json();
+}
+
 async function saveData() {
   const error = validateBeforeSave();
   if (error) {
@@ -891,34 +917,65 @@ async function saveData() {
   elements.saveStatus.textContent = "저장 중";
 
   try {
-    const response = await fetch("/api/scripts", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(state.data)
-    });
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "저장 실패");
-    state.data = payload;
+    if (state.storageMode === "server") {
+      const response = await fetch("/api/scripts", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(state.data)
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || "저장 실패");
+      state.data = payload;
+    } else {
+      state.data = {
+        ...state.data,
+        updatedAt: new Date().toISOString()
+      };
+      writeLocalScriptsData(state.data);
+    }
     setDirty(false);
     renderAll();
   } catch (error) {
-    setError(error.message);
+    if (state.storageMode === "server") {
+      try {
+        state.storageMode = "local";
+        state.data = {
+          ...state.data,
+          updatedAt: new Date().toISOString()
+        };
+        writeLocalScriptsData(state.data);
+        setDirty(false);
+        renderAll();
+        return;
+      } catch (localError) {
+        setError(localError.message || "브라우저에 저장하지 못했습니다.");
+        return;
+      }
+    }
+    setError(error.message || "저장 실패");
   } finally {
     elements.saveButton.disabled = false;
   }
 }
 
 async function loadData() {
-  const response = await fetch("/api/scripts");
-  if (!response.ok) throw new Error("데이터를 불러오지 못했습니다.");
-  state.data = await response.json();
+  try {
+    state.data = await fetchJson("/api/scripts");
+    state.storageMode = "server";
+  } catch {
+    const localData = readLocalScriptsData();
+    state.data = localData || await fetchJson("data/scripts.json");
+    state.storageMode = "local";
+  }
   state.selectedId = state.data.scripts[0]?.id || null;
 }
 
 async function loadFillers() {
-  const response = await fetch("/api/fillers");
-  if (!response.ok) throw new Error("필러 데이터를 불러오지 못했습니다.");
-  state.fillersData = await response.json();
+  try {
+    state.fillersData = await fetchJson("/api/fillers");
+  } catch {
+    state.fillersData = await fetchJson("data/fillers.json");
+  }
 }
 
 async function loadInitialData() {
