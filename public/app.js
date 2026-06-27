@@ -428,7 +428,9 @@ function renderScriptList() {
       state.selectedId = script.id;
       state.studyIndex = 0;
       state.showEnglish = false;
+      state.mode = "study";
       renderAll();
+      scrollStudyIntoView();
     });
 
     const title = document.createElement("div");
@@ -449,6 +451,15 @@ function renderScriptList() {
   });
 
   elements.scriptList.replaceChildren(...nodes);
+}
+
+function scrollStudyIntoView() {
+  requestAnimationFrame(() => {
+    elements.studyView.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
+  });
 }
 
 function renderFillers() {
