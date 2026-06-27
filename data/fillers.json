@@ -1,0 +1,694 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-24T16:45:01.848Z",
+  "fillers": [
+    {
+      "id": "thinking-let-me-think",
+      "category": "생각할 시간 벌기",
+      "english": "Let me think for a second.",
+      "korean": "잠깐 생각해볼게요.",
+      "usage": "질문을 듣고 바로 답이 안 떠오를 때 침묵 대신 사용",
+      "level": "AL"
+    },
+    {
+      "id": "thinking-good-question",
+      "category": "생각할 시간 벌기",
+      "english": "That's a good question.",
+      "korean": "좋은 질문이네요.",
+      "usage": "의견형 질문을 받았을 때 첫 문장으로 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "thinking-never-thought",
+      "category": "생각할 시간 벌기",
+      "english": "I haven't really thought about that before, but...",
+      "korean": "그건 깊게 생각해본 적은 없지만...",
+      "usage": "낯선 질문에서 답변을 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "clarify-what-i-mean",
+      "category": "말 정리하기",
+      "english": "What I mean is...",
+      "korean": "제 말은...",
+      "usage": "앞 문장이 어색했거나 다시 정리하고 싶을 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "clarify-in-other-words",
+      "category": "말 정리하기",
+      "english": "In other words,",
+      "korean": "다시 말하면,",
+      "usage": "같은 내용을 더 쉽게 바꿔 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "reason-the-reason",
+      "category": "이유 연결",
+      "english": "The reason I say that is...",
+      "korean": "제가 그렇게 말하는 이유는...",
+      "usage": "의견 뒤에 이유를 붙일 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "reason-mainly-because",
+      "category": "이유 연결",
+      "english": "Mainly because...",
+      "korean": "주된 이유는...",
+      "usage": "간단하게 이유를 이어 붙일 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "example-for-example",
+      "category": "예시 들기",
+      "english": "For example,",
+      "korean": "예를 들면,",
+      "usage": "구체적인 사례를 시작할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "example-one-thing",
+      "category": "예시 들기",
+      "english": "One thing I remember is...",
+      "korean": "제가 기억나는 한 가지는...",
+      "usage": "과거 경험 답변에서 기억나는 장면을 꺼낼 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "story-as-far-as-remember",
+      "category": "경험 시작",
+      "english": "As far as I remember,",
+      "korean": "제가 기억하기로는,",
+      "usage": "과거 경험을 자연스럽게 시작할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "story-at-that-time",
+      "category": "경험 시작",
+      "english": "At that time,",
+      "korean": "그때는,",
+      "usage": "과거 시점의 상황을 설명할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "contrast-on-the-other-hand",
+      "category": "비교/대조",
+      "english": "On the other hand,",
+      "korean": "반면에,",
+      "usage": "장단점이나 비교 답변에서 반대 내용을 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "contrast-compared-to-before",
+      "category": "비교/대조",
+      "english": "Compared to before,",
+      "korean": "예전과 비교하면,",
+      "usage": "과거와 현재를 비교할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "opinion-to-be-honest",
+      "category": "의견 말하기",
+      "english": "To be honest,",
+      "korean": "솔직히 말하면,",
+      "usage": "개인 의견을 자연스럽게 시작할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "opinion-in-my-case",
+      "category": "의견 말하기",
+      "english": "In my case,",
+      "korean": "제 경우에는,",
+      "usage": "일반론보다 개인 경험으로 좁힐 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "problem-if-that-happened",
+      "category": "문제 해결",
+      "english": "If that happened to me, I would...",
+      "korean": "그런 일이 저에게 생기면 저는...",
+      "usage": "돌발 상황이나 롤플레이 문제 해결을 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "problem-first-thing",
+      "category": "문제 해결",
+      "english": "The first thing I would do is...",
+      "korean": "제가 가장 먼저 할 일은...",
+      "usage": "문제 해결 순서를 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "roleplay-could-you",
+      "category": "롤플레이",
+      "english": "Could you please help me with this?",
+      "korean": "이것 좀 도와주실 수 있나요?",
+      "usage": "상대에게 정중하게 도움을 요청할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "roleplay-is-there-any-way",
+      "category": "롤플레이",
+      "english": "Is there any way you could...?",
+      "korean": "혹시 ...해주실 방법이 있을까요?",
+      "usage": "요청이나 대안을 정중하게 제시할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "finish-to-wrap-up",
+      "category": "마무리",
+      "english": "So, to wrap up,",
+      "korean": "그래서 정리하자면,",
+      "usage": "답변 마지막에 핵심을 다시 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "finish-that-is-why",
+      "category": "마무리",
+      "english": "That's why I feel that way.",
+      "korean": "그래서 제가 그렇게 느낍니다.",
+      "usage": "의견형 답변을 자연스럽게 끝낼 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "thinking-hard-to-say",
+      "category": "생각할 시간 벌기",
+      "english": "It's a little hard to say right away.",
+      "korean": "바로 말하기는 조금 어렵네요.",
+      "usage": "조금 어려운 질문을 받았을 때 자연스럽게 시간을 벌기",
+      "level": "AL"
+    },
+    {
+      "id": "thinking-first-thing-mind",
+      "category": "생각할 시간 벌기",
+      "english": "The first thing that comes to mind is...",
+      "korean": "가장 먼저 떠오르는 것은...",
+      "usage": "생각나는 첫 아이디어로 답변을 시작할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "thinking-how-should-i-put-this",
+      "category": "생각할 시간 벌기",
+      "english": "How should I put this?",
+      "korean": "이걸 어떻게 말해야 할까요?",
+      "usage": "말을 고르면서도 침묵을 피하고 싶을 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "thinking-let-me-start-with",
+      "category": "생각할 시간 벌기",
+      "english": "Let me start with...",
+      "korean": "먼저 ...부터 말해볼게요.",
+      "usage": "답변 구조를 잡고 첫 포인트를 꺼낼 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "thinking-if-i-had-to-choose",
+      "category": "생각할 시간 벌기",
+      "english": "If I had to choose, I would say...",
+      "korean": "굳이 하나를 고르자면...",
+      "usage": "선호나 비교 질문에서 선택을 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "organize-there-are-two-things",
+      "category": "말 정리하기",
+      "english": "There are two things I want to mention.",
+      "korean": "말하고 싶은 것이 두 가지 있습니다.",
+      "usage": "답변을 두 부분으로 나누어 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "organize-first-of-all",
+      "category": "말 정리하기",
+      "english": "First of all,",
+      "korean": "우선,",
+      "usage": "첫 번째 이유나 설명을 시작할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "organize-another-thing-is",
+      "category": "말 정리하기",
+      "english": "Another thing is...",
+      "korean": "또 다른 점은...",
+      "usage": "두 번째 포인트로 자연스럽게 넘어갈 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "organize-to-be-more-specific",
+      "category": "말 정리하기",
+      "english": "To be more specific,",
+      "korean": "좀 더 구체적으로 말하면,",
+      "usage": "일반적인 설명 뒤에 구체적인 내용을 붙일 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "organize-what-im-trying-to-say",
+      "category": "말 정리하기",
+      "english": "What I'm trying to say is...",
+      "korean": "제가 말하려는 것은...",
+      "usage": "답변이 흐트러졌을 때 핵심으로 돌아올 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "reason-thats-main-reason",
+      "category": "이유 연결",
+      "english": "That's the main reason why...",
+      "korean": "그게 ...의 주된 이유입니다.",
+      "usage": "이유 설명을 마무리하거나 강조할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "reason-it-depends",
+      "category": "이유 연결",
+      "english": "It depends on the situation, but...",
+      "korean": "상황에 따라 다르지만...",
+      "usage": "단정하기 어려운 의견형 질문에서 사용",
+      "level": "AL"
+    },
+    {
+      "id": "reason-from-my-experience",
+      "category": "이유 연결",
+      "english": "From my experience,",
+      "korean": "제 경험상,",
+      "usage": "개인 경험을 근거로 이유를 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "reason-because-of-that",
+      "category": "이유 연결",
+      "english": "Because of that,",
+      "korean": "그것 때문에,",
+      "usage": "앞 문장의 결과를 이어 말할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "reason-that-made-me-realize",
+      "category": "이유 연결",
+      "english": "That made me realize that...",
+      "korean": "그 일을 통해 ...라는 걸 깨달았습니다.",
+      "usage": "경험에서 배운 점을 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "example-for-instance",
+      "category": "예시 들기",
+      "english": "For instance,",
+      "korean": "예를 들어,",
+      "usage": "For example의 대체 표현으로 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "example-a-good-example",
+      "category": "예시 들기",
+      "english": "A good example would be...",
+      "korean": "좋은 예로는...",
+      "usage": "구체적인 사례를 소개할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "example-i-remember-one-time",
+      "category": "예시 들기",
+      "english": "I remember one time when...",
+      "korean": "한번은 ...했던 기억이 있습니다.",
+      "usage": "경험담을 자연스럽게 꺼낼 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "example-this-happened-when",
+      "category": "예시 들기",
+      "english": "This happened when...",
+      "korean": "이 일은 ...했을 때 일어났습니다.",
+      "usage": "사건의 배경을 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "example-in-my-daily-life",
+      "category": "예시 들기",
+      "english": "In my daily life,",
+      "korean": "일상생활에서,",
+      "usage": "일상적인 예시를 말할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "story-a-few-years-ago",
+      "category": "경험 시작",
+      "english": "A few years ago,",
+      "korean": "몇 년 전에,",
+      "usage": "과거 경험 답변을 시작할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "story-last-time",
+      "category": "경험 시작",
+      "english": "The last time I did that,",
+      "korean": "마지막으로 그걸 했을 때,",
+      "usage": "최근 경험을 떠올려 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "story-it-was-when",
+      "category": "경험 시작",
+      "english": "It was when I was...",
+      "korean": "그건 제가 ...였을 때였습니다.",
+      "usage": "과거 시점과 상황을 함께 제시할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "story-i-still-remember",
+      "category": "경험 시작",
+      "english": "I still remember it clearly.",
+      "korean": "아직도 그 일이 선명하게 기억납니다.",
+      "usage": "기억에 남는 경험임을 강조할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "story-what-happened-was",
+      "category": "경험 시작",
+      "english": "What happened was...",
+      "korean": "무슨 일이 있었냐면...",
+      "usage": "사건 전개를 자연스럽게 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "sequence-before-that",
+      "category": "순서 연결",
+      "english": "Before that,",
+      "korean": "그 전에,",
+      "usage": "이전 상황을 설명할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "sequence-after-that",
+      "category": "순서 연결",
+      "english": "After that,",
+      "korean": "그 후에,",
+      "usage": "다음 행동이나 사건으로 넘어갈 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "sequence-while-i-was",
+      "category": "순서 연결",
+      "english": "While I was doing that,",
+      "korean": "제가 그걸 하고 있는 동안,",
+      "usage": "동시에 일어난 일을 설명할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "sequence-at-the-end",
+      "category": "순서 연결",
+      "english": "In the end,",
+      "korean": "결국에는,",
+      "usage": "경험담의 결말을 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "sequence-long-story-short",
+      "category": "순서 연결",
+      "english": "Long story short,",
+      "korean": "간단히 말하면,",
+      "usage": "이야기를 줄이고 결론으로 갈 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "contrast-but-at-the-same-time",
+      "category": "비교/대조",
+      "english": "But at the same time,",
+      "korean": "하지만 동시에,",
+      "usage": "반대되는 장점/단점을 균형 있게 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "contrast-the-biggest-difference",
+      "category": "비교/대조",
+      "english": "The biggest difference is that...",
+      "korean": "가장 큰 차이는 ...입니다.",
+      "usage": "비교 질문에서 핵심 차이를 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "contrast-unlike-before",
+      "category": "비교/대조",
+      "english": "Unlike before,",
+      "korean": "예전과 달리,",
+      "usage": "현재 변화된 점을 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "contrast-these-days",
+      "category": "비교/대조",
+      "english": "These days,",
+      "korean": "요즘은,",
+      "usage": "현재 습관이나 경향을 말할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "contrast-back-then",
+      "category": "비교/대조",
+      "english": "Back then,",
+      "korean": "그 당시에는,",
+      "usage": "과거 상황을 비교할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "opinion-personally",
+      "category": "의견 말하기",
+      "english": "Personally,",
+      "korean": "개인적으로는,",
+      "usage": "의견을 간단히 시작할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "opinion-i-would-say",
+      "category": "의견 말하기",
+      "english": "I would say that...",
+      "korean": "저는 ...라고 말하고 싶습니다.",
+      "usage": "부드럽게 의견을 제시할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "opinion-i-feel-like",
+      "category": "의견 말하기",
+      "english": "I feel like...",
+      "korean": "제 느낌에는...",
+      "usage": "부담 없이 생각이나 느낌을 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "opinion-from-my-point-of-view",
+      "category": "의견 말하기",
+      "english": "From my point of view,",
+      "korean": "제 관점에서는,",
+      "usage": "조금 더 formal하게 의견을 시작할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "opinion-i-am-not-sure-but",
+      "category": "의견 말하기",
+      "english": "I'm not completely sure, but...",
+      "korean": "완전히 확신하진 않지만...",
+      "usage": "애매한 질문에 조심스럽게 답할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "emotion-i-felt-relieved",
+      "category": "감정 표현",
+      "english": "I felt relieved.",
+      "korean": "안심이 됐습니다.",
+      "usage": "문제가 해결된 뒤 감정을 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "emotion-i-was-a-bit-nervous",
+      "category": "감정 표현",
+      "english": "I was a bit nervous at first.",
+      "korean": "처음에는 조금 긴장했습니다.",
+      "usage": "낯선 경험이나 돌발 상황에서 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "emotion-it-was-frustrating",
+      "category": "감정 표현",
+      "english": "It was pretty frustrating.",
+      "korean": "꽤 답답했습니다.",
+      "usage": "불편하거나 문제가 있었던 경험에서 사용",
+      "level": "AL"
+    },
+    {
+      "id": "emotion-i-was-proud",
+      "category": "감정 표현",
+      "english": "I was proud of myself.",
+      "korean": "스스로가 뿌듯했습니다.",
+      "usage": "성취 경험을 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "emotion-it-made-my-day",
+      "category": "감정 표현",
+      "english": "It made my day.",
+      "korean": "그 일 덕분에 하루가 기분 좋았습니다.",
+      "usage": "좋은 경험을 짧고 자연스럽게 표현할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "problem-i-would-check",
+      "category": "문제 해결",
+      "english": "I would check what the problem is first.",
+      "korean": "먼저 문제가 무엇인지 확인할 것입니다.",
+      "usage": "돌발 상황 답변의 첫 단계로 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "problem-then-i-would-ask",
+      "category": "문제 해결",
+      "english": "Then, I would ask for help.",
+      "korean": "그 다음 도움을 요청할 것입니다.",
+      "usage": "문제 해결 순서를 이어갈 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "problem-if-that-didnt-work",
+      "category": "문제 해결",
+      "english": "If that didn't work, I would...",
+      "korean": "그게 안 되면 저는...",
+      "usage": "대안 계획을 제시할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "problem-i-would-try-to-stay-calm",
+      "category": "문제 해결",
+      "english": "I would try to stay calm.",
+      "korean": "침착하려고 할 것입니다.",
+      "usage": "돌발 상황에서 태도를 말할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "problem-the-best-solution",
+      "category": "문제 해결",
+      "english": "The best solution would be to...",
+      "korean": "가장 좋은 해결책은 ...하는 것입니다.",
+      "usage": "해결책을 명확히 제안할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "roleplay-im-calling-about",
+      "category": "롤플레이",
+      "english": "I'm calling about...",
+      "korean": "... 때문에 전화드렸습니다.",
+      "usage": "전화 롤플레이 시작 문장으로 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "roleplay-i-have-a-question-about",
+      "category": "롤플레이",
+      "english": "I have a question about...",
+      "korean": "...에 대해 질문이 있습니다.",
+      "usage": "정보를 문의할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "roleplay-would-it-be-possible",
+      "category": "롤플레이",
+      "english": "Would it be possible to...?",
+      "korean": "...하는 것이 가능할까요?",
+      "usage": "정중한 요청을 할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "roleplay-i-understand-but",
+      "category": "롤플레이",
+      "english": "I understand, but...",
+      "korean": "이해합니다만...",
+      "usage": "불만을 정중하게 제기할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "roleplay-could-you-offer",
+      "category": "롤플레이",
+      "english": "Could you offer me another option?",
+      "korean": "다른 선택지를 제안해주실 수 있나요?",
+      "usage": "대안을 요청할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "roleplay-thank-you-for-help",
+      "category": "롤플레이",
+      "english": "Thank you for your help.",
+      "korean": "도와주셔서 감사합니다.",
+      "usage": "롤플레이를 자연스럽게 마무리할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "repair-let-me-say-that-again",
+      "category": "실수 고치기",
+      "english": "Let me say that again.",
+      "korean": "다시 말해볼게요.",
+      "usage": "말을 잘못했을 때 자연스럽게 수정",
+      "level": "IM+"
+    },
+    {
+      "id": "repair-sorry-i-mean",
+      "category": "실수 고치기",
+      "english": "Sorry, I mean...",
+      "korean": "죄송해요, 제 말은...",
+      "usage": "단어 선택이나 문장을 고칠 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "repair-that-came-out-wrong",
+      "category": "실수 고치기",
+      "english": "That came out wrong.",
+      "korean": "방금 말이 좀 이상하게 나왔네요.",
+      "usage": "표현이 어색하게 나왔을 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "repair-what-i-wanted-to-say",
+      "category": "실수 고치기",
+      "english": "What I wanted to say was...",
+      "korean": "제가 말하고 싶었던 것은...",
+      "usage": "실수 후 원래 의도를 다시 말할 때 사용",
+      "level": "AL"
+    },
+    {
+      "id": "finish-overall",
+      "category": "마무리",
+      "english": "Overall,",
+      "korean": "전반적으로,",
+      "usage": "답변을 종합하며 마무리할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "finish-thats-about-it",
+      "category": "마무리",
+      "english": "That's about it.",
+      "korean": "대략 이 정도입니다.",
+      "usage": "답변을 짧게 마무리할 때 사용",
+      "level": "IM"
+    },
+    {
+      "id": "finish-in-the-end-it-was",
+      "category": "마무리",
+      "english": "In the end, it was a good experience.",
+      "korean": "결국 좋은 경험이었습니다.",
+      "usage": "경험 답변을 긍정적으로 마무리할 때 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "finish-if-i-get-chance",
+      "category": "마무리",
+      "english": "If I get the chance, I would like to do it again.",
+      "korean": "기회가 된다면 다시 해보고 싶습니다.",
+      "usage": "취미/여행/경험 답변의 마무리로 사용",
+      "level": "IM+"
+    },
+    {
+      "id": "finish-that-experience-taught-me",
+      "category": "마무리",
+      "english": "That experience taught me a lot.",
+      "korean": "그 경험을 통해 많은 것을 배웠습니다.",
+      "usage": "과거 경험에서 배운 점으로 끝낼 때 사용",
+      "level": "AL"
+    }
+  ]
+}
