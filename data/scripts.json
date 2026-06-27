@@ -1,0 +1,1306 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-24T16:36:58.317Z",
+  "scripts": [
+    {
+      "id": "intro-basic",
+      "title": "자기소개 기본 답변",
+      "topic": "자기소개",
+      "type": "자기소개",
+      "tags": [
+        "sample",
+        "intro"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 새로운 것을 배우는 것을 좋아하는 사람입니다.",
+          "english": "I am the kind of person who enjoys learning new things."
+        },
+        {
+          "korean": "평소에는 일과 공부의 균형을 맞추려고 노력합니다.",
+          "english": "In my daily life, I try to balance work and study."
+        },
+        {
+          "korean": "처음 만나는 사람에게는 차분하고 성실한 인상을 주고 싶습니다.",
+          "english": "When I meet someone for the first time, I want to sound calm and sincere.",
+          "note": "sound : ~하게 들리다, 인상을 주다"
+        }
+      ]
+    },
+    {
+      "id": "home-routine-basic",
+      "title": "집에서 보내는 평일 루틴",
+      "topic": "집",
+      "type": "묘사",
+      "tags": [
+        "sample",
+        "home"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 보통 퇴근 후에 집에서 조용히 시간을 보냅니다.",
+          "english": "I usually spend quiet time at home after work.",
+          "note": "usually, after work를 자연스럽게 연결"
+        },
+        {
+          "korean": "먼저 간단하게 저녁을 먹고 거실을 정리합니다.",
+          "english": "First, I have a simple dinner and tidy up the living room."
+        },
+        {
+          "korean": "그 다음에는 음악을 틀어 놓고 소파에서 쉬는 편입니다.",
+          "english": "After that, I tend to relax on the sofa with some music on."
+        },
+        {
+          "korean": "이런 시간이 하루를 마무리하는 데 도움이 됩니다.",
+          "english": "This kind of time helps me wrap up the day."
+        }
+      ]
+    },
+    {
+      "id": "sample-03-neighborhood",
+      "title": "동네 산책 루틴",
+      "topic": "동네",
+      "type": "루틴/습관",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "우리 동네는 조용하고 생활하기 편한 편입니다.",
+          "english": "My neighborhood is quiet and convenient to live in."
+        },
+        {
+          "korean": "저는 저녁마다 근처 길을 걸으며 하루를 정리합니다.",
+          "english": "I walk around the nearby streets in the evening to clear my mind."
+        },
+        {
+          "korean": "이 주제는 동네에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 동네.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-04-family",
+      "title": "가족과 보낸 주말",
+      "topic": "가족",
+      "type": "과거 경험",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "지난 주말에는 가족과 집에서 식사를 했습니다.",
+          "english": "Last weekend, I had a meal at home with my family."
+        },
+        {
+          "korean": "특별한 일정은 아니었지만 편하게 이야기할 수 있어서 좋았습니다.",
+          "english": "It was not a special event, but I liked that we could talk comfortably."
+        },
+        {
+          "korean": "이 주제는 가족에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 가족.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-05-friends",
+      "title": "예전 친구 관계와 지금",
+      "topic": "친구",
+      "type": "비교",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "예전에는 친구들을 자주 만났지만 요즘은 연락을 더 많이 합니다.",
+          "english": "In the past, I met my friends often, but these days I mostly keep in touch by message."
+        },
+        {
+          "korean": "그래도 중요한 일이 있을 때는 서로 시간을 내려고 합니다.",
+          "english": "Still, when something important happens, we try to make time for each other.",
+          "note": "Still"
+        },
+        {
+          "korean": "이 주제는 친구에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 친구.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-06-work",
+      "title": "직장을 좋아하는 이유",
+      "topic": "직장",
+      "type": "선호/이유",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 제 직장에서 배울 점이 많아서 만족하는 편입니다.",
+          "english": "I am fairly satisfied with my workplace because there are many things to learn."
+        },
+        {
+          "korean": "특히 동료들과 협력하면서 문제를 해결할 때 보람을 느낍니다.",
+          "english": "I especially feel rewarded when I solve problems with my coworkers."
+        },
+        {
+          "korean": "이 주제는 직장에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 직장.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-07-school",
+      "title": "학교생활의 장단점",
+      "topic": "학교",
+      "type": "장단점",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "학교생활의 장점은 다양한 사람을 만날 수 있다는 점입니다.",
+          "english": "One advantage of school life is that you can meet many different people."
+        },
+        {
+          "korean": "반면에 과제와 시험이 몰리면 일정 관리가 어려워집니다.",
+          "english": "On the other hand, it becomes hard to manage my schedule when assignments and exams pile up."
+        },
+        {
+          "korean": "이 주제는 학교에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 학교.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "coffee-shop-experience",
+      "title": "카페에서 있었던 기억",
+      "topic": "카페",
+      "type": "의견",
+      "tags": [
+        "sample",
+        "cafe"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 카페가 공부나 대화를 하기에 좋은 공간이라고 생각합니다.",
+          "english": "I think cafes are good places to study or have conversations."
+        },
+        {
+          "korean": "지난 주말에 친구와 새로 생긴 카페에 갔는데 분위기가 정말 편했습니다.",
+          "english": "Last weekend, I went to a newly opened cafe with a friend, and the atmosphere was very comfortable."
+        },
+        {
+          "korean": "다만 사람이 너무 많으면 집중하기 어렵다는 점은 아쉽습니다.",
+          "english": "However, it is a little disappointing that it is hard to focus when the place is too crowded."
+        }
+      ]
+    },
+    {
+      "id": "sample-09-restaurant",
+      "title": "레스토랑 예약 문제 해결",
+      "topic": "레스토랑",
+      "type": "문제 해결",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "한번은 예약한 레스토랑에 갔는데 제 이름이 명단에 없었습니다.",
+          "english": "Once, I went to a restaurant I had booked, but my name was not on the list."
+        },
+        {
+          "korean": "저는 예약 확인 문자를 보여 주고 가능한 다른 자리를 요청했습니다.",
+          "english": "I showed them the confirmation message and asked for another available table."
+        },
+        {
+          "korean": "이 주제는 레스토랑에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 레스토랑.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-10-movies",
+      "title": "영화관에 대해 질문하기",
+      "topic": "영화",
+      "type": "롤플레이 질문",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "영화관에 전화한다면 상영 시간과 좌석 상황을 먼저 물어볼 것입니다.",
+          "english": "If I called a movie theater, I would first ask about showtimes and seat availability."
+        },
+        {
+          "korean": "또 주차가 가능한지와 할인 혜택이 있는지도 확인하고 싶습니다.",
+          "english": "I would also like to check whether parking is available and if there are any discounts."
+        },
+        {
+          "korean": "이 주제는 영화에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 영화.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-11-concerts",
+      "title": "공연 티켓 요청하기",
+      "topic": "공연/콘서트",
+      "type": "롤플레이 요청",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "공연 티켓을 예매할 때는 원하는 날짜와 좌석을 분명히 말해야 합니다.",
+          "english": "When booking a concert ticket, I need to clearly mention the date and seat I want."
+        },
+        {
+          "korean": "가능하다면 무대가 잘 보이는 자리로 바꿀 수 있는지도 요청할 것입니다.",
+          "english": "If possible, I would ask if I could change to a seat with a better view of the stage."
+        },
+        {
+          "korean": "이 주제는 공연/콘서트에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 공연/콘서트.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-12-park",
+      "title": "공원 시설 불편 말하기",
+      "topic": "공원",
+      "type": "롤플레이 불만/대안",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "공원에 갔는데 벤치가 너무 더럽다면 관리 사무소에 정중히 말할 것입니다.",
+          "english": "If I went to a park and the benches were very dirty, I would politely tell the management office."
+        },
+        {
+          "korean": "바로 청소가 어렵다면 다른 쉴 공간을 안내해 달라고 요청할 수 있습니다.",
+          "english": "If cleaning is not possible right away, I could ask them to suggest another place to rest."
+        },
+        {
+          "korean": "이 주제는 공원에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 공원.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-13-beach",
+      "title": "해변에서 생긴 돌발 상황",
+      "topic": "해변",
+      "type": "돌발 대응",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "해변에 갔는데 갑자기 비가 오면 먼저 짐을 안전하게 챙길 것입니다.",
+          "english": "If I went to the beach and it suddenly rained, I would first pack my things safely."
+        },
+        {
+          "korean": "그 다음 근처 카페나 실내 장소로 이동해서 일정을 바꿀 것입니다.",
+          "english": "Then I would move to a nearby cafe or indoor place and change my plan."
+        },
+        {
+          "korean": "이 주제는 해변에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 해변.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-14-camping",
+      "title": "캠핑 장소 묘사",
+      "topic": "캠핑",
+      "type": "묘사",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "제가 좋아하는 캠핑장은 나무가 많고 밤에는 조용합니다.",
+          "english": "The campsite I like has many trees and is quiet at night."
+        },
+        {
+          "korean": "불멍을 하면서 친구들과 이야기하면 스트레스가 많이 풀립니다.",
+          "english": "When I sit by the fire and talk with friends, I can relieve a lot of stress."
+        },
+        {
+          "korean": "이 주제는 캠핑에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 캠핑.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-15-watching-sports",
+      "title": "스포츠 관람 루틴",
+      "topic": "스포츠 관람",
+      "type": "루틴/습관",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 큰 경기가 있는 날에는 친구들과 함께 스포츠를 봅니다.",
+          "english": "On days with big games, I watch sports with my friends."
+        },
+        {
+          "korean": "응원하는 팀이 이기면 분위기가 훨씬 더 즐거워집니다.",
+          "english": "When the team I support wins, the mood becomes much more exciting."
+        },
+        {
+          "korean": "이 주제는 스포츠 관람에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 스포츠 관람.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-16-listening-music",
+      "title": "음악 감상 경험",
+      "topic": "음악 감상",
+      "type": "과거 경험",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "예전에 힘든 시기에 음악을 들으면서 기분이 많이 나아졌습니다.",
+          "english": "In the past, listening to music helped me feel much better during a hard time."
+        },
+        {
+          "korean": "특히 잔잔한 노래를 들으면 마음이 차분해졌습니다.",
+          "english": "Especially when I listened to calm songs, I felt more relaxed."
+        },
+        {
+          "korean": "이 주제는 음악 감상에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 음악 감상.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-17-instrument",
+      "title": "악기 연주 비교",
+      "topic": "악기 연주",
+      "type": "비교",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "처음 악기를 배울 때는 손가락이 잘 움직이지 않아 어려웠습니다.",
+          "english": "When I first learned an instrument, it was hard because my fingers did not move well."
+        },
+        {
+          "korean": "지금은 짧은 곡이라도 연주할 수 있어서 더 재미있게 느껴집니다.",
+          "english": "Now I can play short songs, so it feels more enjoyable."
+        },
+        {
+          "korean": "이 주제는 악기 연주에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 악기 연주.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-18-cooking",
+      "title": "요리를 좋아하는 이유",
+      "topic": "요리",
+      "type": "선호/이유",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 요리를 하면 결과가 바로 보여서 재미있습니다.",
+          "english": "I enjoy cooking because I can see the result right away."
+        },
+        {
+          "korean": "또 제가 만든 음식을 다른 사람이 맛있게 먹으면 뿌듯합니다.",
+          "english": "Also, I feel proud when others enjoy the food I made."
+        },
+        {
+          "korean": "이 주제는 요리에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 요리.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-19-reading",
+      "title": "독서의 장단점",
+      "topic": "독서",
+      "type": "장단점",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "독서의 장점은 혼자서도 깊게 생각할 수 있다는 점입니다.",
+          "english": "One advantage of reading is that I can think deeply on my own."
+        },
+        {
+          "korean": "하지만 바쁠 때는 책을 끝까지 읽을 시간을 내기 어렵습니다.",
+          "english": "However, when I am busy, it is hard to make time to finish a book."
+        },
+        {
+          "korean": "이 주제는 독서에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 독서.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-20-writing",
+      "title": "글쓰기에 대한 의견",
+      "topic": "글쓰기",
+      "type": "의견",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 글쓰기가 생각을 정리하는 데 도움이 된다고 생각합니다.",
+          "english": "I think writing helps me organize my thoughts."
+        },
+        {
+          "korean": "짧게라도 일기를 쓰면 그날의 감정을 더 잘 이해할 수 있습니다.",
+          "english": "Even writing a short journal helps me understand my feelings from the day."
+        },
+        {
+          "korean": "이 주제는 글쓰기에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 글쓰기.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-21-photography",
+      "title": "사진 촬영 문제 해결",
+      "topic": "사진",
+      "type": "문제 해결",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "사진을 찍다가 배터리가 부족하면 먼저 밝기를 낮추고 필요한 사진만 찍습니다.",
+          "english": "If my battery gets low while taking pictures, I first lower the brightness and take only the necessary photos."
+        },
+        {
+          "korean": "가능하면 보조 배터리를 빌리거나 가까운 카페에서 충전합니다.",
+          "english": "If possible, I borrow a power bank or charge my phone at a nearby cafe."
+        },
+        {
+          "korean": "이 주제는 사진에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 사진.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-22-shopping",
+      "title": "쇼핑몰에 질문하기",
+      "topic": "쇼핑",
+      "type": "롤플레이 질문",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "쇼핑몰 직원에게 원하는 상품의 사이즈와 재고를 물어볼 수 있습니다.",
+          "english": "I can ask a store clerk about the size and stock of the item I want."
+        },
+        {
+          "korean": "또 교환이나 환불 규정도 미리 확인하면 좋습니다.",
+          "english": "It is also good to check the exchange or refund policy in advance."
+        },
+        {
+          "korean": "이 주제는 쇼핑에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 쇼핑.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-23-tv-video",
+      "title": "TV 서비스 요청하기",
+      "topic": "TV/영상",
+      "type": "롤플레이 요청",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "영상 서비스에 문제가 생기면 고객센터에 재생 오류를 설명할 것입니다.",
+          "english": "If there is a problem with a video service, I would explain the playback error to customer service."
+        },
+        {
+          "korean": "그리고 결제 내역을 확인한 뒤 빠른 조치를 요청하겠습니다.",
+          "english": "Then I would check my payment history and ask for quick support."
+        },
+        {
+          "korean": "이 주제는 TV/영상에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to TV/영상.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-24-games",
+      "title": "게임 접속 불만 말하기",
+      "topic": "게임",
+      "type": "롤플레이 불만/대안",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "게임 서버에 계속 접속이 안 된다면 문제 상황을 구체적으로 설명하겠습니다.",
+          "english": "If I cannot connect to a game server, I would explain the problem in detail."
+        },
+        {
+          "korean": "보상이 가능한지 묻고 임시 해결 방법도 요청할 것입니다.",
+          "english": "I would ask whether compensation is possible and request a temporary solution as well."
+        },
+        {
+          "korean": "이 주제는 게임에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 게임.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-25-internet",
+      "title": "인터넷 연결 돌발 상황",
+      "topic": "인터넷",
+      "type": "돌발 대응",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "중요한 일을 하다가 인터넷이 끊기면 먼저 공유기를 다시 확인합니다.",
+          "english": "If the internet goes down while I am doing something important, I first check the router again."
+        },
+        {
+          "korean": "그래도 안 되면 휴대폰 핫스팟을 켜서 급한 일을 처리합니다.",
+          "english": "If it still does not work, I turn on my phone hotspot and handle the urgent task."
+        },
+        {
+          "korean": "이 주제는 인터넷에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 인터넷.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-26-walking-jogging",
+      "title": "걷기와 조깅 묘사",
+      "topic": "걷기/조깅",
+      "type": "묘사",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 걷기와 조깅을 가장 부담 없는 운동으로 생각합니다.",
+          "english": "I think walking and jogging are the easiest exercises to start."
+        },
+        {
+          "korean": "이어폰으로 음악을 들으면서 걸으면 기분 전환이 됩니다.",
+          "english": "When I walk while listening to music with earphones, it refreshes my mood."
+        },
+        {
+          "korean": "이 주제는 걷기/조깅에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 걷기/조깅.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-27-fitness",
+      "title": "헬스장 루틴",
+      "topic": "헬스",
+      "type": "루틴/습관",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 보통 일주일에 두세 번 헬스장에 가려고 합니다.",
+          "english": "I usually try to go to the gym two or three times a week."
+        },
+        {
+          "korean": "운동 전에는 가볍게 스트레칭을 하고 무리하지 않으려고 합니다.",
+          "english": "Before exercising, I stretch lightly and try not to overdo it."
+        },
+        {
+          "korean": "이 주제는 헬스에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 헬스.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-28-yoga",
+      "title": "요가 수업 경험",
+      "topic": "요가",
+      "type": "과거 경험",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "처음 요가 수업을 들었을 때 생각보다 자세가 어려웠습니다.",
+          "english": "When I first took a yoga class, the poses were harder than I expected."
+        },
+        {
+          "korean": "하지만 수업이 끝난 뒤 몸이 가벼워져서 계속하고 싶어졌습니다.",
+          "english": "But after the class, my body felt lighter, so I wanted to keep doing it."
+        },
+        {
+          "korean": "이 주제는 요가에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 요가.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-29-swimming",
+      "title": "수영 실력 비교",
+      "topic": "수영",
+      "type": "비교",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "예전에는 물에 들어가는 것도 조금 무서웠습니다.",
+          "english": "In the past, I was a little afraid of even getting into the water."
+        },
+        {
+          "korean": "지금은 천천히라도 몇 바퀴를 돌 수 있어서 자신감이 생겼습니다.",
+          "english": "Now I can swim a few laps slowly, so I feel more confident."
+        },
+        {
+          "korean": "이 주제는 수영에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 수영.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-30-biking",
+      "title": "자전거를 좋아하는 이유",
+      "topic": "자전거",
+      "type": "선호/이유",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 자전거를 타면 이동과 운동을 동시에 할 수 있어서 좋아합니다.",
+          "english": "I like riding a bike because I can travel and exercise at the same time."
+        },
+        {
+          "korean": "날씨가 좋은 날 강변을 달리면 스트레스가 많이 풀립니다.",
+          "english": "On a nice day, riding along the river relieves a lot of stress."
+        },
+        {
+          "korean": "이 주제는 자전거에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 자전거.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-31-soccer",
+      "title": "축구의 장단점",
+      "topic": "축구",
+      "type": "장단점",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "축구는 팀워크를 느낄 수 있다는 점이 가장 큰 장점입니다.",
+          "english": "The biggest advantage of soccer is that you can feel teamwork."
+        },
+        {
+          "korean": "다만 오래 뛰어야 해서 체력이 부족하면 금방 지칠 수 있습니다.",
+          "english": "However, since you have to run a lot, you can get tired quickly if you lack stamina."
+        },
+        {
+          "korean": "이 주제는 축구에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 축구.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-32-basketball",
+      "title": "농구에 대한 의견",
+      "topic": "농구",
+      "type": "의견",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 농구가 속도감이 있어서 보는 재미가 큰 운동이라고 생각합니다.",
+          "english": "I think basketball is fun to watch because it is fast-paced."
+        },
+        {
+          "korean": "점수가 자주 나기 때문에 경기 흐름이 지루하지 않습니다.",
+          "english": "Because teams score often, the flow of the game is not boring."
+        },
+        {
+          "korean": "이 주제는 농구에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 농구.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-33-baseball",
+      "title": "야구장 문제 해결",
+      "topic": "야구",
+      "type": "문제 해결",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "야구장에 갔는데 좌석을 찾기 어렵다면 직원에게 바로 물어볼 것입니다.",
+          "english": "If I went to a baseball stadium and had trouble finding my seat, I would ask a staff member right away."
+        },
+        {
+          "korean": "티켓에 적힌 구역과 번호를 보여 주면 더 빨리 안내받을 수 있습니다.",
+          "english": "If I show the section and seat number on my ticket, I can get help faster."
+        },
+        {
+          "korean": "이 주제는 야구에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 야구.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-34-tennis-badminton",
+      "title": "테니스장 예약 질문하기",
+      "topic": "테니스/배드민턴",
+      "type": "롤플레이 질문",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "코트를 예약할 때는 이용 가능한 시간과 장비 대여 여부를 물어봅니다.",
+          "english": "When booking a court, I ask about available times and whether equipment rental is possible."
+        },
+        {
+          "korean": "비가 올 경우 취소나 변경이 가능한지도 확인하고 싶습니다.",
+          "english": "I would also like to check whether I can cancel or change the reservation if it rains."
+        },
+        {
+          "korean": "이 주제는 테니스/배드민턴에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 테니스/배드민턴.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-35-hiking",
+      "title": "하이킹 일정 요청하기",
+      "topic": "하이킹",
+      "type": "롤플레이 요청",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "친구에게 하이킹 일정을 제안할 때는 쉬운 코스부터 말할 것입니다.",
+          "english": "When suggesting a hiking plan to a friend, I would first mention an easy course."
+        },
+        {
+          "korean": "출발 시간과 준비물을 함께 정하자고 요청하면 좋습니다.",
+          "english": "It would be good to ask them to decide the departure time and things to bring together."
+        },
+        {
+          "korean": "이 주제는 하이킹에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 하이킹.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-36-ski-snowboard",
+      "title": "스키장 불편 말하기",
+      "topic": "스키/스노보드",
+      "type": "롤플레이 불만/대안",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "스키장 장비가 맞지 않으면 직원에게 불편한 점을 설명하겠습니다.",
+          "english": "If ski resort equipment does not fit, I would explain the problem to a staff member."
+        },
+        {
+          "korean": "다른 사이즈로 바꾸거나 환불이 가능한지 정중히 물어볼 것입니다.",
+          "english": "I would politely ask if I could change to another size or get a refund."
+        },
+        {
+          "korean": "이 주제는 스키/스노보드에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 스키/스노보드.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-37-domestic-travel",
+      "title": "국내여행 돌발 상황",
+      "topic": "국내여행",
+      "type": "돌발 대응",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "국내여행 중 기차를 놓치면 바로 다음 교통편을 검색할 것입니다.",
+          "english": "If I missed a train during a domestic trip, I would immediately look for the next transportation option."
+        },
+        {
+          "korean": "숙소에는 도착 시간이 늦어질 수 있다고 미리 연락하겠습니다.",
+          "english": "I would contact my accommodation in advance and tell them I might arrive late."
+        },
+        {
+          "korean": "이 주제는 국내여행에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 국내여행.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-38-overseas-travel",
+      "title": "해외여행 장소 묘사",
+      "topic": "해외여행",
+      "type": "묘사",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "제가 기억하는 해외여행지는 거리 분위기가 아주 이국적이었습니다.",
+          "english": "The overseas destination I remember had a very different atmosphere on the streets."
+        },
+        {
+          "korean": "낯선 음식과 언어 때문에 처음에는 긴장했지만 곧 즐길 수 있었습니다.",
+          "english": "At first I felt nervous because of unfamiliar food and language, but soon I could enjoy it."
+        },
+        {
+          "korean": "이 주제는 해외여행에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 해외여행.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-39-staycation",
+      "title": "집에서 보내는 휴가 루틴",
+      "topic": "집에서 보내는 휴가",
+      "type": "루틴/습관",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 집에서 휴가를 보낼 때 일부러 일정을 많이 잡지 않습니다.",
+          "english": "When I spend a vacation at home, I intentionally do not make many plans."
+        },
+        {
+          "korean": "늦게 일어나서 영화를 보고 맛있는 음식을 먹으며 쉽니다.",
+          "english": "I wake up late, watch movies, and relax while eating good food."
+        },
+        {
+          "korean": "이 주제는 집에서 보내는 휴가에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 집에서 보내는 휴가.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-40-business-trip",
+      "title": "출장 경험",
+      "topic": "출장",
+      "type": "과거 경험",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "예전에 출장 때문에 낯선 도시에서 며칠을 보낸 적이 있습니다.",
+          "english": "In the past, I spent a few days in an unfamiliar city because of a business trip."
+        },
+        {
+          "korean": "일정은 바빴지만 새로운 사람을 만나고 많이 배울 수 있었습니다.",
+          "english": "The schedule was busy, but I met new people and learned a lot."
+        },
+        {
+          "korean": "이 주제는 출장에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 출장.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-41-hotel",
+      "title": "호텔 이용 비교",
+      "topic": "호텔",
+      "type": "비교",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "예전에는 가격만 보고 호텔을 골랐지만 지금은 위치와 후기도 봅니다.",
+          "english": "In the past, I chose hotels only by price, but now I also check the location and reviews."
+        },
+        {
+          "korean": "조식이나 교통이 편하면 여행 전체가 훨씬 편해집니다.",
+          "english": "If breakfast or transportation is convenient, the whole trip becomes much easier."
+        },
+        {
+          "korean": "이 주제는 호텔에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 호텔.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-42-transportation",
+      "title": "대중교통을 선호하는 이유",
+      "topic": "교통",
+      "type": "선호/이유",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 복잡한 도심에서는 대중교통을 이용하는 것을 선호합니다.",
+          "english": "In a busy city, I prefer using public transportation."
+        },
+        {
+          "korean": "주차 걱정을 하지 않아도 되고 이동 시간이 비교적 예측 가능합니다.",
+          "english": "I do not have to worry about parking, and the travel time is relatively predictable."
+        },
+        {
+          "korean": "이 주제는 교통에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 교통.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-43-weather",
+      "title": "날씨의 장단점",
+      "topic": "날씨",
+      "type": "장단점",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "맑은 날씨의 장점은 밖에서 활동하기 좋다는 점입니다.",
+          "english": "One advantage of sunny weather is that it is good for outdoor activities."
+        },
+        {
+          "korean": "하지만 너무 더우면 쉽게 지치고 집중하기 어렵습니다.",
+          "english": "However, if it is too hot, I get tired easily and have trouble focusing."
+        },
+        {
+          "korean": "이 주제는 날씨에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 날씨.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-44-health",
+      "title": "건강 관리 의견",
+      "topic": "건강",
+      "type": "의견",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "저는 건강 관리는 거창한 계획보다 작은 습관이 더 중요하다고 생각합니다.",
+          "english": "I think small habits are more important for health than big plans."
+        },
+        {
+          "korean": "충분히 자고 물을 자주 마시는 것부터 시작할 수 있습니다.",
+          "english": "We can start by sleeping enough and drinking water often."
+        },
+        {
+          "korean": "이 주제는 건강에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 건강.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-45-bank-service",
+      "title": "은행 업무 문제 해결",
+      "topic": "은행/서비스",
+      "type": "문제 해결",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "은행 앱에서 송금이 안 되면 먼저 오류 메시지를 확인합니다.",
+          "english": "If I cannot transfer money on a banking app, I first check the error message."
+        },
+        {
+          "korean": "해결이 안 되면 고객센터에 연락해서 계좌 상태를 확인하겠습니다.",
+          "english": "If it is not solved, I would contact customer service and check my account status."
+        },
+        {
+          "korean": "이 주제는 은행/서비스에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 은행/서비스.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-46-phone-tech",
+      "title": "휴대폰 구매 질문하기",
+      "topic": "휴대폰/기술",
+      "type": "롤플레이 질문",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "새 휴대폰을 살 때는 배터리와 저장 용량을 먼저 물어봅니다.",
+          "english": "When buying a new phone, I first ask about the battery and storage capacity."
+        },
+        {
+          "korean": "또 약정 조건과 보상 판매가 가능한지도 확인하고 싶습니다.",
+          "english": "I would also like to check the contract terms and whether trade-in is possible."
+        },
+        {
+          "korean": "이 주제는 휴대폰/기술에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 휴대폰/기술.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-47-housework",
+      "title": "집안일 도움 요청하기",
+      "topic": "집안일",
+      "type": "롤플레이 요청",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "집안일이 많을 때는 가족에게 구체적으로 도움을 요청하는 편입니다.",
+          "english": "When there is a lot of housework, I tend to ask my family for specific help."
+        },
+        {
+          "korean": "예를 들어 설거지나 분리수거처럼 맡을 일을 분명히 말합니다.",
+          "english": "For example, I clearly mention tasks like washing dishes or taking out recycling."
+        },
+        {
+          "korean": "이 주제는 집안일에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 집안일.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    },
+    {
+      "id": "sample-48-appointments",
+      "title": "약속 장소 불만과 대안",
+      "topic": "약속/모임",
+      "type": "롤플레이 불만/대안",
+      "tags": [
+        "sample",
+        "topic"
+      ],
+      "createdAt": "2026-06-24T16:27:42.602Z",
+      "updatedAt": "2026-06-24T16:36:58.317Z",
+      "sentences": [
+        {
+          "korean": "약속 장소가 너무 시끄럽다면 친구에게 조용한 곳으로 옮기자고 말할 것입니다.",
+          "english": "If the meeting place is too noisy, I would tell my friend that we should move somewhere quieter."
+        },
+        {
+          "korean": "근처 카페나 공원처럼 대화하기 좋은 대안을 제안하겠습니다.",
+          "english": "I would suggest an alternative place that is good for talking, like a nearby cafe or park."
+        },
+        {
+          "korean": "이 주제는 약속/모임에 대한 구체적인 장소, 사람, 감정을 함께 말하기 좋아서 연습용으로 좋습니다.",
+          "english": "This topic is good practice because I can talk about specific places, people, and feelings related to 약속/모임.",
+          "note": "필터 확인용 샘플 문장"
+        }
+      ]
+    }
+  ]
+}
