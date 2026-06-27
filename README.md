@@ -10,6 +10,12 @@ npm start
 
 브라우저에서 `http://localhost:5174`를 엽니다.
 
+## 배포
+
+GitHub Pages 배포는 `.github/workflows/pages.yml`에서 처리합니다. `main` 브랜치에 변경사항이 올라가면 `public/` 파일과 `data/` JSON을 정적 사이트로 묶어 배포합니다.
+
+배포된 정적 사이트에서는 서버 API가 없기 때문에 `저장` 버튼이 `data/scripts.json`을 직접 수정하지 않고, 현재 브라우저의 `localStorage`에 개인 편집본을 저장합니다. 다른 기기나 브라우저로 옮길 때는 `JSON 내보내기`와 `JSON 가져오기`를 사용하세요.
+
 ## 데이터 파일
 
 스크립트 데이터는 `data/scripts.json` 하나에 저장됩니다.
