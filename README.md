@@ -35,4 +35,4 @@ GitHub Pages 배포는 `.github/workflows/pages.yml`에서 처리합니다. `mai
 
 ## 필러
 
-필러 표현은 `data/fillers.json`에 별도로 저장됩니다. 웹 화면의 `필러` 탭에서 상황별로 필터링하고, 브라우저 TTS로 영어 표현을 바로 들을 수 있습니다.
+필러 표현은 `data/fillers.json`에 별도로 저장됩니다. 웹 화면의 `필러` 탭에서 상황별로 필터링해 빠르게 찾아볼 수 있습니다.
