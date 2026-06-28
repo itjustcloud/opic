@@ -633,13 +633,6 @@ function renderStudy() {
     number.textContent = `${index + 1}번째 문장`;
     heading.append(number);
 
-    if (isActive) {
-      const current = document.createElement("span");
-      current.className = "study-flow-current";
-      current.textContent = "현재";
-      heading.append(current);
-    }
-
     const korean = document.createElement("span");
     korean.className = "study-flow-korean";
     korean.textContent = item.korean || "한글 문장을 입력하세요.";
