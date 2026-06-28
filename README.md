@@ -10,6 +10,13 @@ npm start
 
 브라우저에서 `http://localhost:5174`를 엽니다.
 
+웹 화면의 스크립트 목록은 기본적으로 공개된 Google Spreadsheet의 CSV export를 읽어옵니다.
+현재 연결된 시트:
+
+`https://docs.google.com/spreadsheets/d/1P2jZmJJv4t_AMjFEPbHFPqc5iKeHz_oPdnn8ktUpIiQ/edit?usp=sharing`
+
+C열의 단일 스크립트 JSON만 실제 앱 데이터로 사용하며, 빈 C열은 무시합니다. A열/B열은 시트 관리용 보조 컬럼입니다.
+
 ## 배포
 
 GitHub Pages 배포는 `.github/workflows/pages.yml`에서 처리합니다. `main` 브랜치에 변경사항이 올라가면 `public/` 파일과 `data/` JSON을 정적 사이트로 묶어 배포합니다.
@@ -18,7 +25,7 @@ GitHub Pages 배포는 `.github/workflows/pages.yml`에서 처리합니다. `mai
 
 ## 데이터 파일
 
-스크립트 데이터는 `data/scripts.json` 하나에 저장됩니다.
+스크립트 데이터는 기본적으로 Google Spreadsheet의 C열 JSON에서 읽고, 로컬 서버 저장본은 `data/scripts.json`에 유지됩니다.
 
 각 스크립트는 `title`, `topic`, `type`, `tags`, `sentences`를 가집니다. 문장은 `korean`, `english`, 선택 필드인 `note`로 구성됩니다.
 
