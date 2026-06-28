@@ -23,9 +23,6 @@ const elements = {
   scriptList: document.querySelector("#scriptList"),
   saveButton: document.querySelector("#saveButton"),
   saveStatus: document.querySelector("#saveStatus"),
-  downloadJsonButton: document.querySelector("#downloadJsonButton"),
-  uploadJsonButton: document.querySelector("#uploadJsonButton"),
-  jsonUploadInput: document.querySelector("#jsonUploadInput"),
   editTab: document.querySelector("#editTab"),
   studyTab: document.querySelector("#studyTab"),
   fillersTab: document.querySelector("#fillersTab"),
@@ -812,92 +809,6 @@ function removeSentence(index) {
   renderAll();
 }
 
-function downloadJson() {
-  commitEditor();
-
-  const content = `${JSON.stringify(state.data, null, 2)}\n`;
-  const blob = new Blob([content], { type: "application/json;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  const date = new Date().toISOString().slice(0, 10);
-
-  link.href = url;
-  link.download = `opic-scripts-${date}.json`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
-}
-
-function normalizeJsonPayload(payload) {
-  const now = new Date().toISOString();
-
-  if (Array.isArray(payload)) {
-    const scripts = assignUniqueIds(payload.map((script, index) => normalizeScriptShape(script, index)));
-    return {
-      kind: "dataset",
-      data: { version: 1, updatedAt: now, scripts }
-    };
-  }
-
-  if (payload && typeof payload === "object" && Array.isArray(payload.scripts)) {
-    const scripts = assignUniqueIds(
-      payload.scripts.map((script, index) => normalizeScriptShape(script, index))
-    );
-    return {
-      kind: "dataset",
-      data: { version: 1, updatedAt: now, scripts }
-    };
-  }
-
-  if (payload && typeof payload === "object" && Array.isArray(payload.sentences)) {
-    const usedIds = new Set(state.data.scripts.map((script) => script.id));
-    const script = assignUniqueIds([normalizeScriptShape(payload)], usedIds)[0];
-    return { kind: "script", script };
-  }
-
-  throw new Error("전체 scripts JSON 또는 단일 스크립트 JSON 파일이 필요합니다.");
-}
-
-function importJsonPayload(payload) {
-  commitEditor();
-  const imported = normalizeJsonPayload(payload);
-
-  if (imported.kind === "dataset") {
-    const confirmed = window.confirm("가져온 JSON으로 현재 스크립트 목록을 교체할까요?");
-    if (!confirmed) return;
-
-    state.data = imported.data;
-    state.selectedId = state.data.scripts[0]?.id || null;
-  } else {
-    state.data.scripts.unshift(imported.script);
-    state.selectedId = imported.script.id;
-  }
-
-  elements.topicFilter.value = "";
-  elements.typeFilter.value = "";
-  elements.searchInput.value = "";
-  state.mode = "edit";
-  state.studyIndex = 0;
-  state.showEnglish = false;
-  setDirty();
-  renderAll();
-}
-
-async function uploadJsonFile(event) {
-  const file = event.target.files?.[0];
-  if (!file) return;
-
-  try {
-    const payload = JSON.parse(await file.text());
-    importJsonPayload(payload);
-  } catch (error) {
-    setError(error.message || "JSON 파일을 가져오지 못했습니다.");
-  } finally {
-    event.target.value = "";
-  }
-}
-
 function applyScriptJson() {
   const current = selectedScript();
   if (!current) return;
@@ -1040,9 +951,6 @@ async function loadInitialData() {
 function bindEvents() {
   elements.addScriptButton.addEventListener("click", createNewScript);
   elements.saveButton.addEventListener("click", saveData);
-  elements.downloadJsonButton.addEventListener("click", downloadJson);
-  elements.uploadJsonButton.addEventListener("click", () => elements.jsonUploadInput.click());
-  elements.jsonUploadInput.addEventListener("change", uploadJsonFile);
   elements.addSentenceButton.addEventListener("click", addSentence);
   elements.duplicateButton.addEventListener("click", duplicateScript);
   elements.deleteButton.addEventListener("click", deleteScript);
