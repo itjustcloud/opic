@@ -4,15 +4,10 @@ const state = {
   selectedId: null,
   dirty: false,
   storageMode: "server",
-  mode: "edit",
+  mode: "study",
   studyIndex: 0,
-  showEnglish: false,
-  tts: {
-    supported: false,
-    voices: [],
-    voiceURI: "",
-    rate: 1
-  }
+  studyViewMode: "single",
+  showEnglish: false
 };
 
 const localScriptsKey = "opic-script-studio:scripts";
@@ -56,16 +51,13 @@ const elements = {
   studyMeta: document.querySelector("#studyMeta"),
   studyTitle: document.querySelector("#studyTitle"),
   studyCounter: document.querySelector("#studyCounter"),
+  studySingleModeButton: document.querySelector("#studySingleModeButton"),
+  studyFlowModeButton: document.querySelector("#studyFlowModeButton"),
+  studyCard: document.querySelector("#studyCard"),
+  studyFlow: document.querySelector("#studyFlow"),
   koreanPrompt: document.querySelector("#koreanPrompt"),
   noteBox: document.querySelector("#noteBox"),
   englishAnswer: document.querySelector("#englishAnswer"),
-  voiceSelect: document.querySelector("#voiceSelect"),
-  rateInput: document.querySelector("#rateInput"),
-  rateValue: document.querySelector("#rateValue"),
-  autoSpeakEnglish: document.querySelector("#autoSpeakEnglish"),
-  speakKoreanButton: document.querySelector("#speakKoreanButton"),
-  speakEnglishButton: document.querySelector("#speakEnglishButton"),
-  stopSpeechButton: document.querySelector("#stopSpeechButton"),
   fillerCategoryFilter: document.querySelector("#fillerCategoryFilter"),
   fillerSearchInput: document.querySelector("#fillerSearchInput"),
   fillersCounter: document.querySelector("#fillersCounter"),
@@ -282,120 +274,6 @@ function selectedScript() {
   return state.data.scripts.find((script) => script.id === state.selectedId) || null;
 }
 
-function currentSentence() {
-  const script = selectedScript();
-  return script?.sentences[state.studyIndex] || null;
-}
-
-function ttsAvailable() {
-  return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
-}
-
-function scoreVoice(voice) {
-  if (voice.lang?.startsWith("ko")) return 0;
-  if (voice.lang?.startsWith("en")) return 1;
-  return 2;
-}
-
-function renderVoiceOptions() {
-  if (!state.tts.supported) {
-    elements.voiceSelect.replaceChildren(new Option("TTS 미지원", ""));
-    elements.voiceSelect.disabled = true;
-    return;
-  }
-
-  elements.voiceSelect.disabled = false;
-  const current = state.tts.voiceURI || elements.voiceSelect.value;
-  const voices = [...state.tts.voices].sort((a, b) => {
-    const scoreDiff = scoreVoice(a) - scoreVoice(b);
-    return scoreDiff || a.name.localeCompare(b.name);
-  });
-
-  elements.voiceSelect.replaceChildren(new Option("자동 선택", ""));
-  voices.forEach((voice) => {
-    elements.voiceSelect.append(new Option(`${voice.name} (${voice.lang})`, voice.voiceURI));
-  });
-
-  elements.voiceSelect.value = voices.some((voice) => voice.voiceURI === current) ? current : "";
-  state.tts.voiceURI = elements.voiceSelect.value;
-}
-
-function loadVoices() {
-  if (!state.tts.supported) return;
-  state.tts.voices = window.speechSynthesis.getVoices();
-  renderVoiceOptions();
-  renderFillers();
-}
-
-function initTts() {
-  state.tts.supported = ttsAvailable();
-  elements.rateInput.value = String(state.tts.rate);
-  elements.rateValue.value = `${state.tts.rate.toFixed(1)}x`;
-  elements.rateValue.textContent = `${state.tts.rate.toFixed(1)}x`;
-
-  if (!state.tts.supported) {
-    elements.rateInput.disabled = true;
-    elements.autoSpeakEnglish.disabled = true;
-    renderVoiceOptions();
-    return;
-  }
-
-  elements.rateInput.disabled = false;
-  elements.autoSpeakEnglish.disabled = false;
-  loadVoices();
-  if ("addEventListener" in window.speechSynthesis) {
-    window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
-  } else {
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-  }
-}
-
-function preferredVoice(langPrefix) {
-  if (!state.tts.supported) return null;
-
-  if (state.tts.voiceURI) {
-    return state.tts.voices.find((voice) => voice.voiceURI === state.tts.voiceURI) || null;
-  }
-
-  return (
-    state.tts.voices.find((voice) => voice.lang?.toLowerCase().startsWith(langPrefix)) ||
-    state.tts.voices.find((voice) => voice.lang?.toLowerCase().startsWith("en")) ||
-    null
-  );
-}
-
-function stopSpeech() {
-  if (state.tts.supported) {
-    window.speechSynthesis.cancel();
-  }
-}
-
-function speakText(text, lang) {
-  if (!state.tts.supported || !text) return;
-
-  stopSpeech();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = state.tts.rate;
-
-  const voice = preferredVoice(lang.toLowerCase().slice(0, 2));
-  if (voice) utterance.voice = voice;
-
-  window.speechSynthesis.speak(utterance);
-}
-
-function speakCurrentSentence(language) {
-  const sentence = currentSentence();
-  if (!sentence) return;
-
-  if (language === "korean") {
-    speakText(sentence.korean, "ko-KR");
-    return;
-  }
-
-  speakText(sentence.english, "en-US");
-}
-
 function setDirty(isDirty = true) {
   state.dirty = isDirty;
   elements.saveStatus.textContent = isDirty
@@ -538,7 +416,6 @@ function renderScriptList() {
     button.className = "script-item";
     button.classList.toggle("active", script.id === state.selectedId);
     button.addEventListener("click", () => {
-      stopSpeech();
       commitEditor();
       state.selectedId = script.id;
       state.studyIndex = 0;
@@ -617,14 +494,7 @@ function renderFillers() {
       tags.append(chip);
     });
 
-    const speakButton = document.createElement("button");
-    speakButton.type = "button";
-    speakButton.className = "secondary-button";
-    speakButton.textContent = "듣기";
-    speakButton.disabled = !state.tts.supported;
-    speakButton.addEventListener("click", () => speakText(filler.english, "en-US"));
-
-    actions.append(tags, speakButton);
+    actions.append(tags);
     card.append(english, korean, usage, actions);
     return card;
   });
@@ -693,6 +563,12 @@ function renderEditor() {
 
 function renderStudy() {
   const script = selectedScript();
+  const isSingleMode = state.studyViewMode === "single";
+  elements.studySingleModeButton.classList.toggle("active", isSingleMode);
+  elements.studyFlowModeButton.classList.toggle("active", !isSingleMode);
+  elements.studyCard.classList.toggle("hidden", !isSingleMode);
+  elements.studyFlow.classList.toggle("hidden", isSingleMode);
+
   if (!script) {
     elements.studyMeta.textContent = "-";
     elements.studyTitle.textContent = "스크립트 선택";
@@ -700,12 +576,14 @@ function renderStudy() {
     elements.koreanPrompt.textContent = "스크립트를 선택하세요.";
     elements.noteBox.classList.add("hidden");
     elements.englishAnswer.classList.add("hidden");
+    elements.toggleEnglishButton.textContent = state.studyViewMode === "flow" ? "영어 전체 보기" : "영어 보기";
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.textContent = "스크립트를 선택하면 전체 흐름을 한 번에 볼 수 있습니다.";
+    elements.studyFlow.replaceChildren(empty);
     elements.prevSentenceButton.disabled = true;
     elements.nextSentenceButton.disabled = true;
     elements.toggleEnglishButton.disabled = true;
-    elements.speakKoreanButton.disabled = true;
-    elements.speakEnglishButton.disabled = true;
-    elements.stopSpeechButton.disabled = !state.tts.supported;
     return;
   }
 
@@ -718,12 +596,13 @@ function renderStudy() {
   elements.prevSentenceButton.disabled = state.studyIndex === 0;
   elements.nextSentenceButton.disabled = state.studyIndex === script.sentences.length - 1;
   elements.toggleEnglishButton.disabled = false;
-  elements.toggleEnglishButton.textContent = state.showEnglish ? "영어 숨기기" : "영어 보기";
-  elements.speakKoreanButton.disabled = !state.tts.supported;
-  elements.speakEnglishButton.disabled = !state.tts.supported;
-  elements.stopSpeechButton.disabled = !state.tts.supported;
+  elements.toggleEnglishButton.textContent = state.showEnglish
+    ? "영어 숨기기"
+    : state.studyViewMode === "flow"
+      ? "영어 전체 보기"
+      : "영어 보기";
 
-  if (sentence.note) {
+  if (isSingleMode && sentence.note) {
     elements.noteBox.textContent = sentence.note;
     elements.noteBox.classList.remove("hidden");
   } else {
@@ -731,7 +610,59 @@ function renderStudy() {
   }
 
   elements.englishAnswer.textContent = sentence.english || "영어 문장을 입력하세요.";
-  elements.englishAnswer.classList.toggle("hidden", !state.showEnglish);
+  elements.englishAnswer.classList.toggle("hidden", !isSingleMode || !state.showEnglish);
+
+  const flowNodes = script.sentences.map((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "study-flow-item";
+    const isActive = index === state.studyIndex;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    button.addEventListener("click", () => {
+      if (state.studyIndex === index) return;
+      state.studyIndex = index;
+      renderStudy();
+    });
+
+    const heading = document.createElement("span");
+    heading.className = "study-flow-heading";
+
+    const number = document.createElement("span");
+    number.className = "study-flow-number";
+    number.textContent = `${index + 1}번째 문장`;
+    heading.append(number);
+
+    if (isActive) {
+      const current = document.createElement("span");
+      current.className = "study-flow-current";
+      current.textContent = "현재";
+      heading.append(current);
+    }
+
+    const korean = document.createElement("span");
+    korean.className = "study-flow-korean";
+    korean.textContent = item.korean || "한글 문장을 입력하세요.";
+    button.append(heading, korean);
+
+    if (item.note) {
+      const note = document.createElement("span");
+      note.className = "note-box study-flow-note";
+      note.textContent = item.note;
+      button.append(note);
+    }
+
+    if (state.showEnglish) {
+      const english = document.createElement("span");
+      english.className = "english-answer study-flow-english";
+      english.textContent = item.english || "영어 문장을 입력하세요.";
+      button.append(english);
+    }
+
+    return button;
+  });
+
+  elements.studyFlow.replaceChildren(...flowNodes);
 }
 
 function renderMode() {
@@ -1126,23 +1057,6 @@ function bindEvents() {
     updateScriptJsonView({ commit: true, force: true, status: "현재 편집 내용 반영됨" });
   });
   elements.applyScriptJsonButton.addEventListener("click", applyScriptJson);
-  elements.voiceSelect.addEventListener("change", () => {
-    state.tts.voiceURI = elements.voiceSelect.value;
-  });
-  elements.rateInput.addEventListener("input", () => {
-    state.tts.rate = Number(elements.rateInput.value);
-    elements.rateValue.value = `${state.tts.rate.toFixed(1)}x`;
-    elements.rateValue.textContent = `${state.tts.rate.toFixed(1)}x`;
-  });
-  elements.speakKoreanButton.addEventListener("click", () => speakCurrentSentence("korean"));
-  elements.speakEnglishButton.addEventListener("click", () => {
-    if (!state.showEnglish) {
-      state.showEnglish = true;
-      renderStudy();
-    }
-    speakCurrentSentence("english");
-  });
-  elements.stopSpeechButton.addEventListener("click", stopSpeech);
 
   [elements.topicFilter, elements.typeFilter, elements.searchInput].forEach((element) => {
     element.addEventListener("input", renderScriptList);
@@ -1164,13 +1078,11 @@ function bindEvents() {
   });
 
   elements.editTab.addEventListener("click", () => {
-    stopSpeech();
     state.mode = "edit";
     renderMode();
   });
 
   elements.studyTab.addEventListener("click", () => {
-    stopSpeech();
     commitEditor();
     state.mode = "study";
     state.showEnglish = false;
@@ -1179,7 +1091,6 @@ function bindEvents() {
   });
 
   elements.fillersTab.addEventListener("click", () => {
-    stopSpeech();
     commitEditor();
     state.mode = "fillers";
     renderFillers();
@@ -1187,7 +1098,6 @@ function bindEvents() {
   });
 
   elements.prevSentenceButton.addEventListener("click", () => {
-    stopSpeech();
     state.studyIndex = Math.max(0, state.studyIndex - 1);
     state.showEnglish = false;
     renderStudy();
@@ -1196,19 +1106,26 @@ function bindEvents() {
   elements.nextSentenceButton.addEventListener("click", () => {
     const script = selectedScript();
     if (!script) return;
-    stopSpeech();
     state.studyIndex = Math.min(script.sentences.length - 1, state.studyIndex + 1);
     state.showEnglish = false;
     renderStudy();
   });
 
   elements.toggleEnglishButton.addEventListener("click", () => {
-    const shouldSpeak = !state.showEnglish && elements.autoSpeakEnglish.checked;
     state.showEnglish = !state.showEnglish;
     renderStudy();
-    if (state.showEnglish && shouldSpeak) {
-      speakCurrentSentence("english");
-    }
+  });
+
+  elements.studySingleModeButton.addEventListener("click", () => {
+    if (state.studyViewMode === "single") return;
+    state.studyViewMode = "single";
+    renderStudy();
+  });
+
+  elements.studyFlowModeButton.addEventListener("click", () => {
+    if (state.studyViewMode === "flow") return;
+    state.studyViewMode = "flow";
+    renderStudy();
   });
 
   window.addEventListener("keydown", (event) => {
@@ -1249,7 +1166,6 @@ function bindEvents() {
   });
 }
 
-initTts();
 bindEvents();
 loadInitialData().catch((error) => {
   setError(error.message);
