@@ -16,6 +16,9 @@ const state = {
 };
 
 const localScriptsKey = "opic-script-studio:scripts";
+const scriptsSpreadsheetUrl =
+  "https://docs.google.com/spreadsheets/d/1P2jZmJJv4t_AMjFEPbHFPqc5iKeHz_oPdnn8ktUpIiQ/edit?usp=sharing";
+const scriptsSpreadsheetCsvUrl = buildGoogleSheetsCsvUrl(scriptsSpreadsheetUrl);
 
 const elements = {
   addScriptButton: document.querySelector("#addScriptButton"),
@@ -84,6 +87,118 @@ function createSlug(value) {
 
 function cleanText(value) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function buildGoogleSheetsCsvUrl(shareUrl) {
+  const url = new URL(shareUrl);
+  const match = url.pathname.match(/\/spreadsheets\/d\/([^/]+)/u);
+
+  if (!match) {
+    throw new Error("스프레드시트 주소에서 시트 ID를 찾지 못했습니다.");
+  }
+
+  const gidFromHash = url.hash.match(/gid=(\d+)/u)?.[1];
+  const gid = url.searchParams.get("gid") || gidFromHash || "0";
+  return `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${gid}`;
+}
+
+function parseCsv(text) {
+  const rows = [];
+  const source = text.replace(/^\uFEFF/u, "");
+  let row = [];
+  let value = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < source.length; index += 1) {
+    const char = source[index];
+
+    if (inQuotes) {
+      if (char === "\"") {
+        if (source[index + 1] === "\"") {
+          value += "\"";
+          index += 1;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        value += char;
+      }
+      continue;
+    }
+
+    if (char === "\"") {
+      inQuotes = true;
+      continue;
+    }
+
+    if (char === ",") {
+      row.push(value);
+      value = "";
+      continue;
+    }
+
+    if (char === "\r" || char === "\n") {
+      if (char === "\r" && source[index + 1] === "\n") {
+        index += 1;
+      }
+      row.push(value);
+      rows.push(row);
+      row = [];
+      value = "";
+      continue;
+    }
+
+    value += char;
+  }
+
+  if (value || row.length > 0) {
+    row.push(value);
+    rows.push(row);
+  }
+
+  return rows.filter((cells) => cells.some((cell) => cell.length > 0));
+}
+
+function hasSpreadsheetHeader(row = []) {
+  return cleanText(row[0]) === "순번" && cleanText(row[1]) === "유형" && cleanText(row[2]) === "스크립트";
+}
+
+function buildScriptsDataFromSpreadsheet(rows) {
+  const headerPresent = hasSpreadsheetHeader(rows[0]);
+  const dataRows = headerPresent ? rows.slice(1) : rows;
+  const usedIds = new Set();
+  const scripts = [];
+
+  dataRows.forEach((row, index) => {
+    const cellValue = cleanText(row[2]);
+    const sheetRowNumber = (headerPresent ? 2 : 1) + index;
+
+    if (!cellValue) return;
+
+    let parsed;
+    try {
+      parsed = JSON.parse(cellValue);
+    } catch (error) {
+      throw new Error(`스프레드시트 ${sheetRowNumber}행 C열 JSON 파싱 실패: ${error.message}`);
+    }
+
+    try {
+      const script = assignUniqueIds([normalizeScriptShape(parsed, scripts.length)], usedIds)[0];
+      scripts.push(script);
+    } catch (error) {
+      throw new Error(`스프레드시트 ${sheetRowNumber}행 C열 검증 실패: ${error.message}`);
+    }
+  });
+
+  if (scripts.length === 0) {
+    throw new Error("스프레드시트 C열에서 유효한 스크립트를 찾지 못했습니다.");
+  }
+
+  return {
+    version: 1,
+    updatedAt: new Date().toISOString(),
+    scripts
+  };
 }
 
 function normalizeTags(value) {
@@ -911,10 +1026,21 @@ function writeLocalScriptsData(data) {
   window.localStorage.setItem(localScriptsKey, JSON.stringify(data));
 }
 
+async function fetchText(path) {
+  const response = await fetch(path, { cache: "no-store" });
+  if (!response.ok) throw new Error(`${path} 요청 실패`);
+  return response.text();
+}
+
 async function fetchJson(path) {
   const response = await fetch(path, { cache: "no-store" });
   if (!response.ok) throw new Error(`${path} 요청 실패`);
   return response.json();
+}
+
+async function fetchSpreadsheetScriptsData() {
+  const csvText = await fetchText(scriptsSpreadsheetCsvUrl);
+  return buildScriptsDataFromSpreadsheet(parseCsv(csvText));
 }
 
 async function saveData() {
@@ -928,41 +1054,30 @@ async function saveData() {
   elements.saveStatus.textContent = "저장 중";
 
   try {
-    if (state.storageMode === "server") {
+    const payload = {
+      ...state.data,
+      updatedAt: new Date().toISOString()
+    };
+
+    try {
       const response = await fetch("/api/scripts", {
         method: "PUT",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(state.data)
+        body: JSON.stringify(payload)
       });
-      const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error || "저장 실패");
+      const nextData = await response.json();
+      if (!response.ok) throw new Error(nextData.error || "저장 실패");
+      state.data = nextData;
+      state.storageMode = "server";
+    } catch {
       state.data = payload;
-    } else {
-      state.data = {
-        ...state.data,
-        updatedAt: new Date().toISOString()
-      };
       writeLocalScriptsData(state.data);
+      state.storageMode = "local";
     }
+
     setDirty(false);
     renderAll();
   } catch (error) {
-    if (state.storageMode === "server") {
-      try {
-        state.storageMode = "local";
-        state.data = {
-          ...state.data,
-          updatedAt: new Date().toISOString()
-        };
-        writeLocalScriptsData(state.data);
-        setDirty(false);
-        renderAll();
-        return;
-      } catch (localError) {
-        setError(localError.message || "브라우저에 저장하지 못했습니다.");
-        return;
-      }
-    }
     setError(error.message || "저장 실패");
   } finally {
     elements.saveButton.disabled = false;
@@ -971,12 +1086,16 @@ async function saveData() {
 
 async function loadData() {
   try {
-    state.data = await fetchJson("/api/scripts");
-    state.storageMode = "server";
+    state.data = await fetchSpreadsheetScriptsData();
   } catch {
-    const localData = readLocalScriptsData();
-    state.data = localData || await fetchJson("data/scripts.json");
-    state.storageMode = "local";
+    try {
+      state.data = await fetchJson("/api/scripts");
+      state.storageMode = "server";
+    } catch {
+      const localData = readLocalScriptsData();
+      state.data = localData || await fetchJson("data/scripts.json");
+      state.storageMode = "local";
+    }
   }
   state.selectedId = state.data.scripts[0]?.id || null;
 }
