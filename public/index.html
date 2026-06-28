@@ -40,8 +40,8 @@
       <main class="workspace">
         <div class="topbar">
           <div class="segmented" role="tablist" aria-label="보기 선택">
-            <button id="editTab" class="active" type="button">편집</button>
-            <button id="studyTab" type="button">학습</button>
+            <button id="studyTab" class="active" type="button">학습</button>
+            <button id="editTab" type="button">편집</button>
             <button id="fillersTab" type="button">필러</button>
           </div>
           <div class="status-row">
@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <section id="editorView" class="view active" aria-label="스크립트 편집">
+        <section id="editorView" class="view" aria-label="스크립트 편집">
           <div class="editor-layout">
             <form id="scriptForm" class="editor-form">
               <div class="field-row">
@@ -107,7 +107,7 @@
           </div>
         </section>
 
-        <section id="studyView" class="view" aria-label="학습하기">
+        <section id="studyView" class="view active" aria-label="학습하기">
           <div class="study-shell">
             <div class="study-header">
               <div>
@@ -117,34 +117,19 @@
               <div class="counter" id="studyCounter">0 / 0</div>
             </div>
 
-            <div class="study-card">
+            <div class="study-mode-switch segmented" aria-label="학습 보기 모드">
+              <button id="studySingleModeButton" class="active" type="button">한 문장씩</button>
+              <button id="studyFlowModeButton" type="button">전체 흐름</button>
+            </div>
+
+            <div id="studyCard" class="study-card">
               <p class="study-label">한국어</p>
               <p id="koreanPrompt" class="korean-prompt">스크립트를 선택하세요.</p>
               <div id="noteBox" class="note-box hidden"></div>
               <div id="englishAnswer" class="english-answer hidden"></div>
             </div>
 
-            <div class="tts-panel" id="ttsPanel">
-              <div class="tts-settings">
-                <label>
-                  <span>음성</span>
-                  <select id="voiceSelect"></select>
-                </label>
-                <label>
-                  <span>속도 <output id="rateValue">1.0x</output></span>
-                  <input id="rateInput" type="range" min="0.7" max="1.3" step="0.1" value="1" />
-                </label>
-                <label class="check-row">
-                  <input id="autoSpeakEnglish" type="checkbox" />
-                  <span>영어 표시 시 자동 듣기</span>
-                </label>
-              </div>
-              <div class="tts-actions">
-                <button id="speakKoreanButton" class="secondary-button" type="button">한국어 듣기</button>
-                <button id="speakEnglishButton" class="secondary-button" type="button">영어 듣기</button>
-                <button id="stopSpeechButton" class="secondary-button" type="button">정지</button>
-              </div>
-            </div>
+            <div id="studyFlow" class="study-flow hidden"></div>
 
             <div class="study-controls">
               <button id="prevSentenceButton" class="icon-action" type="button" title="이전 문장" aria-label="이전 문장">
