@@ -585,25 +585,16 @@ textarea:focus {
 .study-flow-heading {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
 }
 
-.study-flow-number,
-.study-flow-current {
+.study-flow-number {
   font-size: 0.82rem;
   font-weight: 900;
 }
 
 .study-flow-number {
   color: var(--accent);
-}
-
-.study-flow-current {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
 }
 
 .study-flow-korean,
