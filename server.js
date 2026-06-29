@@ -7,7 +7,6 @@ import { fileURLToPath } from "node:url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const publicDir = resolve(__dirname, "public");
 const dataDir = resolve(__dirname, "data");
-const dataFile = join(dataDir, "scripts.json");
 const fillersFile = join(dataDir, "fillers.json");
 const port = Number(process.env.PORT || 5174);
 const host = process.env.HOST || "127.0.0.1";
@@ -19,20 +18,6 @@ const mimeTypes = {
   ".json": "application/json; charset=utf-8",
   ".svg": "image/svg+xml"
 };
-
-async function ensureDataFile() {
-  await mkdir(dataDir, { recursive: true });
-  try {
-    await readFile(dataFile, "utf8");
-  } catch (error) {
-    if (error.code !== "ENOENT") throw error;
-    await writeFile(
-      dataFile,
-      JSON.stringify({ version: 1, scripts: [] }, null, 2) + "\n",
-      "utf8"
-    );
-  }
-}
 
 async function ensureFillersFile() {
   await mkdir(dataDir, { recursive: true });
@@ -105,7 +90,6 @@ const server = createServer(async (request, response) => {
   }
 });
 
-await ensureDataFile();
 await ensureFillersFile();
 server.listen(port, host, () => {
   console.log(`OPIc study app: http://${host}:${port}`);
