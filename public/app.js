@@ -3,14 +3,13 @@ const state = {
   fillersData: { version: 1, fillers: [] },
   selectedId: null,
   dirty: false,
-  storageMode: "server",
+  dataSource: "spreadsheet",
   mode: "study",
   studyIndex: 0,
   studyViewMode: "single",
   showEnglish: false
 };
 
-const localScriptsKey = "opic-script-studio:scripts";
 const scriptsSpreadsheetUrl =
   "https://docs.google.com/spreadsheets/d/1P2jZmJJv4t_AMjFEPbHFPqc5iKeHz_oPdnn8ktUpIiQ/edit?usp=sharing";
 const scriptsSpreadsheetCsvUrl = buildGoogleSheetsCsvUrl(scriptsSpreadsheetUrl);
@@ -21,8 +20,7 @@ const elements = {
   typeFilter: document.querySelector("#typeFilter"),
   searchInput: document.querySelector("#searchInput"),
   scriptList: document.querySelector("#scriptList"),
-  saveButton: document.querySelector("#saveButton"),
-  saveStatus: document.querySelector("#saveStatus"),
+  sourceStatus: document.querySelector("#sourceStatus"),
   editTab: document.querySelector("#editTab"),
   studyTab: document.querySelector("#studyTab"),
   fillersTab: document.querySelector("#fillersTab"),
@@ -41,8 +39,7 @@ const elements = {
   sentenceTemplate: document.querySelector("#sentenceTemplate"),
   duplicateButton: document.querySelector("#duplicateButton"),
   deleteButton: document.querySelector("#deleteButton"),
-  refreshScriptJsonButton: document.querySelector("#refreshScriptJsonButton"),
-  applyScriptJsonButton: document.querySelector("#applyScriptJsonButton"),
+  copyScriptJsonButton: document.querySelector("#copyScriptJsonButton"),
   scriptJsonTextarea: document.querySelector("#scriptJsonTextarea"),
   scriptJsonStatus: document.querySelector("#scriptJsonStatus"),
   studyMeta: document.querySelector("#studyMeta"),
@@ -271,20 +268,21 @@ function selectedScript() {
   return state.data.scripts.find((script) => script.id === state.selectedId) || null;
 }
 
+function renderSourceStatus() {
+  const sourceLabel = state.dataSource === "backup" ? "백업 JSON 기준" : "스프레드시트 기준";
+  elements.sourceStatus.textContent = state.dirty ? `${sourceLabel} · 임시 편집 중` : sourceLabel;
+  elements.sourceStatus.classList.toggle("dirty", state.dirty);
+  elements.sourceStatus.classList.remove("error");
+}
+
 function setDirty(isDirty = true) {
   state.dirty = isDirty;
-  elements.saveStatus.textContent = isDirty
-    ? "저장 필요"
-    : state.storageMode === "local"
-      ? "브라우저 저장됨"
-      : "저장됨";
-  elements.saveStatus.classList.toggle("dirty", isDirty);
-  elements.saveStatus.classList.remove("error");
+  renderSourceStatus();
 }
 
 function setError(message) {
-  elements.saveStatus.textContent = message;
-  elements.saveStatus.classList.add("error");
+  elements.sourceStatus.textContent = message;
+  elements.sourceStatus.classList.add("error");
 }
 
 function setScriptJsonStatus(message = "", isError = false) {
@@ -292,22 +290,22 @@ function setScriptJsonStatus(message = "", isError = false) {
   elements.scriptJsonStatus.classList.toggle("error", isError);
 }
 
-function updateScriptJsonView({ commit = false, force = false, status = "" } = {}) {
-  if (commit) commitEditor();
+function defaultScriptJsonStatus() {
+  if (!selectedScript()) return "";
+  return state.dirty
+    ? "수정됨. 복사 후 스프레드시트 C열에 붙여넣으세요."
+    : "복사해서 스프레드시트 C열에 붙여넣으세요.";
+}
 
+function updateScriptJsonView(status = defaultScriptJsonStatus()) {
   const script = selectedScript();
   const hasScript = Boolean(script);
   elements.scriptJsonTextarea.disabled = !hasScript;
-  elements.refreshScriptJsonButton.disabled = !hasScript;
-  elements.applyScriptJsonButton.disabled = !hasScript;
+  elements.copyScriptJsonButton.disabled = !hasScript;
 
   if (!hasScript) {
     elements.scriptJsonTextarea.value = "";
     setScriptJsonStatus("");
-    return;
-  }
-
-  if (!force && document.activeElement === elements.scriptJsonTextarea) {
     return;
   }
 
@@ -513,7 +511,7 @@ function renderEditor() {
     elements.typeInput.value = "";
     elements.tagsInput.value = "";
     elements.sentenceEditor.replaceChildren();
-    updateScriptJsonView({ force: true });
+    updateScriptJsonView();
     return;
   }
 
@@ -555,7 +553,7 @@ function renderEditor() {
   });
 
   elements.sentenceEditor.replaceChildren(...sentenceNodes);
-  updateScriptJsonView({ force: true });
+  updateScriptJsonView();
 }
 
 function renderStudy() {
@@ -668,6 +666,7 @@ function renderMode() {
 }
 
 function renderAll() {
+  renderSourceStatus();
   renderFilters();
   renderFillerFilters();
   renderScriptList();
@@ -809,56 +808,29 @@ function removeSentence(index) {
   renderAll();
 }
 
-function applyScriptJson() {
-  const current = selectedScript();
-  if (!current) return;
-
-  try {
-    const parsed = JSON.parse(elements.scriptJsonTextarea.value);
-    const index = state.data.scripts.findIndex((script) => script.id === current.id);
-    const usedIds = new Set(state.data.scripts.map((script) => script.id));
-    usedIds.delete(current.id);
-    const script = assignUniqueIds([normalizeScriptShape(parsed, index)], usedIds)[0];
-
-    state.data.scripts[index] = script;
-    state.selectedId = script.id;
-    state.studyIndex = Math.min(state.studyIndex, script.sentences.length - 1);
-    state.showEnglish = false;
-    setDirty();
-    renderAll();
-    setScriptJsonStatus("JSON 적용됨");
-  } catch (error) {
-    setScriptJsonStatus(error.message || "JSON을 적용하지 못했습니다.", true);
-  }
-}
-
-function validateBeforeSave() {
+async function copyScriptJson() {
   commitEditor();
-  for (const script of state.data.scripts) {
-    if (!script.title.trim()) return "제목이 비어 있습니다.";
-    if (!script.topic.trim()) return `"${script.title}"의 주제가 비어 있습니다.`;
-    if (!script.type.trim()) return `"${script.title}"의 유형이 비어 있습니다.`;
-    if (!script.sentences.length) return `"${script.title}"에 문장이 없습니다.`;
-    for (const [index, sentence] of script.sentences.entries()) {
-      if (!sentence.korean.trim() || !sentence.english.trim()) {
-        return `"${script.title}" ${index + 1}번째 문장의 한글/영어가 비어 있습니다.`;
-      }
-    }
-  }
-  return "";
-}
+  const script = selectedScript();
+  if (!script) return;
 
-function readLocalScriptsData() {
+  const content = JSON.stringify(script, null, 2);
+  elements.scriptJsonTextarea.value = content;
+
   try {
-    const raw = window.localStorage.getItem(localScriptsKey);
-    return raw ? JSON.parse(raw) : null;
-  } catch {
-    return null;
+    if (window.navigator.clipboard?.writeText) {
+      await window.navigator.clipboard.writeText(content);
+    } else {
+      elements.scriptJsonTextarea.focus();
+      elements.scriptJsonTextarea.select();
+      const copied = document.execCommand("copy");
+      elements.scriptJsonTextarea.setSelectionRange(0, 0);
+      elements.scriptJsonTextarea.blur();
+      if (!copied) throw new Error("JSON을 복사하지 못했습니다.");
+    }
+    setScriptJsonStatus("복사됨. 스프레드시트 C열에 붙여넣으세요.");
+  } catch (error) {
+    setScriptJsonStatus(error.message || "JSON을 복사하지 못했습니다.", true);
   }
-}
-
-function writeLocalScriptsData(data) {
-  window.localStorage.setItem(localScriptsKey, JSON.stringify(data));
 }
 
 async function fetchText(path) {
@@ -878,59 +850,13 @@ async function fetchSpreadsheetScriptsData() {
   return buildScriptsDataFromSpreadsheet(parseCsv(csvText));
 }
 
-async function saveData() {
-  const error = validateBeforeSave();
-  if (error) {
-    setError(error);
-    return;
-  }
-
-  elements.saveButton.disabled = true;
-  elements.saveStatus.textContent = "저장 중";
-
-  try {
-    const payload = {
-      ...state.data,
-      updatedAt: new Date().toISOString()
-    };
-
-    try {
-      const response = await fetch("/api/scripts", {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      const nextData = await response.json();
-      if (!response.ok) throw new Error(nextData.error || "저장 실패");
-      state.data = nextData;
-      state.storageMode = "server";
-    } catch {
-      state.data = payload;
-      writeLocalScriptsData(state.data);
-      state.storageMode = "local";
-    }
-
-    setDirty(false);
-    renderAll();
-  } catch (error) {
-    setError(error.message || "저장 실패");
-  } finally {
-    elements.saveButton.disabled = false;
-  }
-}
-
 async function loadData() {
   try {
     state.data = await fetchSpreadsheetScriptsData();
+    state.dataSource = "spreadsheet";
   } catch {
-    try {
-      state.data = await fetchJson("/api/scripts");
-      state.storageMode = "server";
-    } catch {
-      const localData = readLocalScriptsData();
-      state.data = localData || await fetchJson("data/scripts.json");
-      state.storageMode = "local";
-    }
+    state.data = await fetchJson("data/scripts.json");
+    state.dataSource = "backup";
   }
   state.selectedId = state.data.scripts[0]?.id || null;
 }
@@ -950,14 +876,12 @@ async function loadInitialData() {
 
 function bindEvents() {
   elements.addScriptButton.addEventListener("click", createNewScript);
-  elements.saveButton.addEventListener("click", saveData);
   elements.addSentenceButton.addEventListener("click", addSentence);
   elements.duplicateButton.addEventListener("click", duplicateScript);
   elements.deleteButton.addEventListener("click", deleteScript);
-  elements.refreshScriptJsonButton.addEventListener("click", () => {
-    updateScriptJsonView({ commit: true, force: true, status: "현재 편집 내용 반영됨" });
+  elements.copyScriptJsonButton.addEventListener("click", () => {
+    void copyScriptJson();
   });
-  elements.applyScriptJsonButton.addEventListener("click", applyScriptJson);
 
   [elements.topicFilter, elements.typeFilter, elements.searchInput].forEach((element) => {
     element.addEventListener("input", renderScriptList);
