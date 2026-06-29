@@ -309,17 +309,17 @@ textarea:focus {
   color: var(--danger);
 }
 
-.save-status {
+.source-status {
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 700;
 }
 
-.save-status.dirty {
+.source-status.dirty {
   color: #9a5b00;
 }
 
-.save-status.error {
+.source-status.error {
   color: var(--danger);
 }
 
@@ -408,6 +408,10 @@ textarea:focus {
   line-height: 1.55;
   tab-size: 2;
   white-space: pre;
+}
+
+.json-textarea[readonly] {
+  background: #f7f9f8;
 }
 
 .json-status {
