@@ -45,8 +45,7 @@
             <button id="fillersTab" type="button">필러</button>
           </div>
           <div class="status-row">
-            <span id="saveStatus" class="save-status">저장됨</span>
-            <button id="saveButton" class="primary-button" type="button">저장</button>
+            <span id="sourceStatus" class="source-status">스프레드시트 기준</span>
           </div>
         </div>
 
@@ -89,11 +88,10 @@
               <div class="panel-header">
                 <h2>스크립트 JSON</h2>
                 <div class="panel-actions">
-                  <button id="refreshScriptJsonButton" class="secondary-button" type="button">새로고침</button>
-                  <button id="applyScriptJsonButton" class="primary-button" type="button">JSON 적용</button>
+                  <button id="copyScriptJsonButton" class="secondary-button" type="button">복사</button>
                 </div>
               </div>
-              <textarea id="scriptJsonTextarea" class="json-textarea" rows="18" spellcheck="false"></textarea>
+              <textarea id="scriptJsonTextarea" class="json-textarea" rows="18" spellcheck="false" readonly></textarea>
               <div id="scriptJsonStatus" class="json-status" aria-live="polite"></div>
             </div>
 
