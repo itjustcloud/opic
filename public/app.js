@@ -3,7 +3,6 @@ const state = {
   fillersData: { version: 1, fillers: [] },
   selectedId: null,
   dirty: false,
-  dataSource: "spreadsheet",
   mode: "study",
   studyIndex: 0,
   studyViewMode: "single",
@@ -269,8 +268,7 @@ function selectedScript() {
 }
 
 function renderSourceStatus() {
-  const sourceLabel = state.dataSource === "backup" ? "백업 JSON 기준" : "스프레드시트 기준";
-  elements.sourceStatus.textContent = state.dirty ? `${sourceLabel} · 임시 편집 중` : sourceLabel;
+  elements.sourceStatus.textContent = state.dirty ? "스프레드시트 기준 · 임시 편집 중" : "스프레드시트 기준";
   elements.sourceStatus.classList.toggle("dirty", state.dirty);
   elements.sourceStatus.classList.remove("error");
 }
@@ -851,13 +849,7 @@ async function fetchSpreadsheetScriptsData() {
 }
 
 async function loadData() {
-  try {
-    state.data = await fetchSpreadsheetScriptsData();
-    state.dataSource = "spreadsheet";
-  } catch {
-    state.data = await fetchJson("data/scripts.json");
-    state.dataSource = "backup";
-  }
+  state.data = await fetchSpreadsheetScriptsData();
   state.selectedId = state.data.scripts[0]?.id || null;
 }
 
